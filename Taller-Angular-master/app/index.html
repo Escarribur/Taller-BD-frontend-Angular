@@ -1,0 +1,70 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Univerbici</title>
+  <!-- Recursos de bower-->
+  <!-- build:css css/vendor.css -->   
+  <!-- bower:css -->
+  <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css" />
+  <!-- endbower -->
+  <!-- endbuild -->
+
+  <!-- Estilos personalizados-->
+  <!-- build:css css/main.css -->  
+  <!-- inject:css -->
+  <link rel="stylesheet" href="styles/main.css">
+  <!-- endinject -->
+  <!-- endbuild -->
+</head>
+<body ng-app="angularSpa">
+<nav class="navbar navbar-default">
+  <ul class="nav navbar-nav navbar-right">
+    <li><a href="#/home">Inicio</a></li>
+    <li><a href="#/mapa">Mapa!</a></li>
+    <li><a href="#/usuarios">Lista de Usuarios</a></li>
+    <li><a href="#/crearusuarios">Crear Usuario</a></li>
+  </ul>
+</nav>
+<div class="container">
+    <img class="logo" src="images/univerbici.png" alt="logo">
+    <h1>&nbsp;Univerbici</h1>    
+    <div ng-view=""></div>
+</div>
+  <!-- Recursos de bower-->
+  <!-- build:js js/vendor.js --> 
+  <!-- bower:js -->
+  
+  <script src="bower_components/jquery/dist/jquery.js"></script>
+  <script src="bower_components/angular/angular.js"></script>
+  <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
+  <script src="bower_components/angular-route/angular-route.js"></script>
+  <script src="bower_components/ngmap/build/scripts/ng-map.min.js"></script>
+  
+  <script src="//cdnjs.cloudflare.com/ajax/libs/lodash.js/2.4.1/lodash.js"></script>
+  <script src="http://maps.googleapis.com/maps/api/js?key=&sensor=false&extension=.js"></script>
+  <script src="http://rawgit.com/angular-ui/angular-google-maps/2.0.X/dist/angular-google-maps.js"></script>
+
+  <!-- endbower -->
+  <!-- endbuild -->
+
+  <!-- Recursos personales-->
+  <!-- build:js js/scripts.js -->   
+  <!-- inject:js -->
+  <script src="scripts/app.js"></script>
+  <script src="scripts/controllers/MapCtrl.js"></script>
+  <script src="scripts/controllers/UsuariosCtrl.js"></script>
+  <script src="scripts/controllers/aboutCtrl.js"></script>
+  <script src="scripts/controllers/crearActorSrv.js"></script>
+  <script src="scripts/controllers/crearUsuarioCtrl.js"></script>
+  <script src="scripts/controllers/crearUsuarioSrv.js"></script>
+  <script src="scripts/controllers/estacionamientosCtrl.js"></script>
+  <script src="scripts/controllers/estacionamientosSrv.js"></script>
+  <script src="scripts/controllers/mainCtrl.js"></script>
+  <script src="scripts/controllers/showActorCtrl.js"></script>
+  <script src="scripts/controllers/showActorSrv.js"></script>
+  <script src="scripts/controllers/usuariosSrv.js"></script>
+  <!-- endinject -->
+  <!-- endbuild -->
+</body>
+</html>

@@ -1,0 +1,38 @@
+body {
+  color: #fff;
+  padding: 20px;
+  background: #444; }
+
+.shadow {
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-transform: rotate(30deg);
+  transform: rotate(30deg);
+  box-shadow: 1px 1px 5px #444; }
+
+.logo {
+  max-width: 150px;
+  float: left;
+  transition: 1000ms ease; }
+  .logo:hover {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg); }
+
+#map {
+      color: #000;
+      height: 420px;
+      width: 600px;
+    }
+    
+    .infoWindowContent {
+
+      font-size: 14px !important;
+      border-top: 1px solid #ccc;
+      padding-top: 10px;
+    }
+    
+    h2 {
+      margin-bottom: 0;
+      margin-top: 0;
+    }
