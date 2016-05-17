@@ -1,5 +1,7 @@
 $main-color: #fff;
 $back-color: #444;
+$letter-color: #000;
+$border-top: #ccc;
 body{
 	color:$main-color;
 	padding: 20px;
@@ -18,3 +20,20 @@ body{
         transform: rotate(360deg);
     }
 }
+
+#map {
+      color: $letter-color;
+      height: 420px;
+      width: 600px;
+    }
+    
+    .infoWindowContent {
+      font-size: 14px !important;
+      border-top: 1px solid $border-top;
+      padding-top: 10px;
+    }
+    
+    h2 {
+      margin-bottom: 0;
+      margin-top: 0;
+    }
