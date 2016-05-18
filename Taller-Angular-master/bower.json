@@ -28,6 +28,7 @@
     }
   },
   "devDependencies": {
-    "ngmap": "^1.17.3"
+    "ngmap": "^1.17.3",
+    "angular-typer": "^0.5.6"
   }
 }

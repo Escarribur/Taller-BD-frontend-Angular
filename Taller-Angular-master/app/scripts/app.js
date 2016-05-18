@@ -3,6 +3,10 @@
     angular.module('angularSpa', [
     'ngRoute'
     ])
+
+
+
+
     .config(function($routeProvider){
         $routeProvider
         .when('/home', {
