@@ -1,0 +1,35 @@
+<div ng-app="mapsApp" ng-controller="MapCtrl" class="pull-left">
+    <div id="map"></div>
+    <div id="class" ng-repeat="marker in markers | orderBy : 'title'">
+      <a href="#" ng-click="openInfoWindow($event, marker)">{{marker.title}}</a>
+
+
+    </div>
+  </div>
+
+<div class= "pull-rigth">
+	<div class="resultado" >
+		<h3 align="center"><b><u>Datos del Estacionamiento</u></b></h3>
+			<div flex-container="row">
+				<div flex-item>
+				<label for="nombreEstacionamiento">Nombre Estacionamiento:</label>
+				</lx-text-field>	
+			</div>
+			<div flex-container="row">
+				<div flex-item>
+				<label for="capacidad">Capacidad del Estacionamiento:</label>
+				</lx-text-field>	
+			</div>
+			<div flex-container="row">
+				<div flex-item>
+				<label for="ocupados">Estacionamientos ocupados:</label>
+				</lx-text-field>	
+			</div>
+			<div flex-container="row">
+				<div flex-item>
+				<label for="disponibles">Estacionamientos disponibles:</label>
+				</lx-text-field>	
+			</div>
+		</div>
+	</div>
+</div>

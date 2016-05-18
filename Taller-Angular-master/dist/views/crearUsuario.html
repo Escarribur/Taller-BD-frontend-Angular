@@ -1,0 +1,96 @@
+<div class=" pull-left", style="margin: 20px; border:solid 2px ;padding: 20px !important; background: #DCDCDC;">
+<h4 align="center"><b>Registrarse</b></h4>
+<div ng-app="angularSpa" ng-controller="crearUsuarioCtrl">
+	
+	<form ng-submit="crearUsuario()">
+	<div class="pull-left">
+		<div flex-container="row">
+			<div flex-item>
+			<br/><label for="nombre">Nombre</label><br />
+			<input type="text" ng-model="form.nombre">
+			</lx-text-field>	
+			</div>	
+		</div>
+		<div flex-container="row">
+			<div flex-item>
+			<br /><label for="apellido">Apellido</label><br />
+			<input type="text" ng-model="form.apellido">
+			</lx-text-field>	
+			</div>	
+		</div>
+		<div flex-container="row">
+			<div flex-item>
+			<br /><label for="email">Email</label><br />
+			<input type="text" ng-model="form.email">
+			</lx-email-field>	
+			</div>	
+		</div>
+		<div flex-container="row">
+			<div flex-item>
+			<br /><label for="sexo">Sexo</label><br />
+			<select ng-model="form.sexo" convert-to-number>
+  				<option value="">-- Elige una opción --</option>
+  				<option value="0">Femenino</option>
+  				<option value="1">Masculino</option>
+			</select>
+  			</label><br/>
+			</div>	
+		</div>
+		<div flex-container="row">
+			<div flex-item>
+			<br /><label for="fechanacimiento">Fecha de nacimiento</label><br />
+			<input data-provide="datepicker" type="text" ng-model="form.fechanacimiento" placeholder="aaaa-MM-dd" >
+			</lx-text-field>	
+			</div>	
+		</div>
+
+	</div>
+
+	<div class="pull-left"><p>&nbsp&nbsp&nbsp&nbsp&nbsp</p></div>
+
+		<div class="pull-left">
+			<div flex-container="row">
+			<div flex-item>
+			<br /><label for="nickname">Nickname</label><br />
+			<input type="text" ng-model="form.nickname">
+			</lx-text-field>	
+			</div>	
+		</div>
+		<div flex-container="row">
+			<div flex-item>
+			<br /><label for="password">Password</label><br />
+			<input type="password" ng-model="form.password">
+			</lx-password-field>	
+			</div>	
+		</div>
+		<div flex-container="row">
+			<div flex-item>
+			<br /><label for="direccion">Direccion</label><br />
+			<input type="text" ng-model="form.direccion">
+			</lx-text-field>	
+			</div>	
+		</div>
+		<div flex-container="row">
+			<div flex-item>
+			<br /><label for="telefono">Telefono</label><br />
+			<input type="text" ng-model="form.telefono">
+			</lx-text-field>	
+			</div>	
+		</div>
+
+		</div>
+		
+		
+		
+		<div class="clearfix"></div>
+		</br>
+		</br>
+ 		<div class="card__actions ">
+			<button type="submit" class="btn btn-primary btn--l btn--raised">
+			Guardar
+			</button>
+		</div>
+		</div>
+	</form>	
+</div>
+</div>
