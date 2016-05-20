@@ -1,63 +1,48 @@
-var cities = [
-    {
-        city : 'Ingenieria Industrial',
-        desc : 'Estacionamiento',
-        lat : -33.4505,
-        long : -70.688
-    },
-    {
-        city : 'New York',
-        desc : 'This city is aiiiiite!',
-        lat : 40.6700,
-        long : -73.9400
-    },
-    {
-        city : 'Chicago',
-        desc : 'This is the second best city in the world!',
-        lat : 41.8819,
-        long : -87.6278
-    },
-    {
-        city : 'Los Angeles',
-        desc : 'This city is live!',
-        lat : 34.0500,
-        long : -118.2500
-    },
-    {
-        city : 'Las Vegas',
-        desc : 'Sin City...\'nuff said!',
-        lat : 36.0800,
-        long : -115.1522
-    }
-];
+(function(){
+    angular.module('angularSpa')
 
+.controller('MapCtrl', function($scope, estacionamientosService){
+    
+/* Obtener estacionamientos*/
 
-angular.module('angularSpa')
-    .controller('MapCtrl', function ($scope) {
+    $scope.estacionamientos =[];
+    
+        function getEstacionamientos(){
+            estacionamientosService.getEstacionamientos()
+            .success(function(data){
+                $scope.estacionamientos = data;
+                for (i = 0; i < $scope.estacionamientos.length; i++){
+                    createMarker($scope.estacionamientos[i]);
+                }
+            })
+            .error(function(error){
+                $scope.status = 'Error al consultar por estacionamientos';
+            });
+        }
+        getEstacionamientos();
+
         
-
-
-        var mapOptions = {
+/*  configuracion mapa*/
+    var mapOptions = {
             zoom: 16,
             center: new google.maps.LatLng(-33.450178, -70.686327),
             mapTypeId: google.maps.MapTypeId.TERRAIN
         }
 
-        $scope.map = new google.maps.Map(document.getElementById('map'), mapOptions);
+    $scope.markers = [];
+    $scope.map = new google.maps.Map(document.getElementById('map'), mapOptions);
+    var infoWindow = new google.maps.InfoWindow();
 
-        $scope.markers = [];
-
-
-        var infoWindow = new google.maps.InfoWindow();
-
-        var createMarker = function (info){
+    var createMarker = function (info){
 
             var marker = new google.maps.Marker({
                 map: $scope.map,
-                position: new google.maps.LatLng(info.lat, info.long),
-                title: info.city
+                position: new google.maps.LatLng(info.ubi_x, info.ubi_y),
+                title: info.nombreEstacionamiento,
+                id: info.idestacionamiento
             });
-            marker.content = '<div class="infoWindowContent">' + info.desc + '</div>';
+            var disponi = info.capacidad -info.ocupados;
+            marker.content = '<div class="infoWindowContent">Capacidad del Estacionamiento: '+info.capacidad+'<br/>Estacionamientos disponibles:' + disponi + '</div>';
 
             google.maps.event.addListener(marker, 'click', function(){
                 infoWindow.setContent('<h2>' + marker.title + '</h2>' + marker.content);
@@ -68,15 +53,10 @@ angular.module('angularSpa')
 
         }
 
-        for (i = 0; i < cities.length; i++){
-            createMarker(cities[i]);
-        }
-
-        $scope.openInfoWindow = function(e, selectedMarker){
-            e.preventDefault();
-            google.maps.event.trigger(selectedMarker, 'click');
-        }
-
-    });
 
 
+
+});
+
+
+})();

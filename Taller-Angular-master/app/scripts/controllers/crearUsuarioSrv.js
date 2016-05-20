@@ -8,7 +8,7 @@ angular.module('angularSpa')
 
         this.crearUsuario = function(nombre1,apellido1,email1,nickname1,password1,direccion1,sexo1,telefono1,fechanacimiento1){
               var request = $http({
-            method: "post",
+            method: "POST",
             url: "http://localhost:8080/sakila-backend-master/usuarios",
             data: {
                         apellido: apellido1,
@@ -19,7 +19,8 @@ angular.module('angularSpa')
                         nombre: nombre1,
                         password: password1,
                         sexo: sexo1,
-                        telefono: telefono1
+                        telefono: telefono1,
+                        estacionamiento_idestacionamiento: 1,
                     },
 
             headers: {'Content-Type': 'application/json'}

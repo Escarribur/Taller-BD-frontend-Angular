@@ -42,6 +42,10 @@
             templateUrl: 'views/map.html',
             controller: 'MapCtrl'
           })
+        .when('/estacionamientos/:idestacionamiento', {
+            templateUrl: 'views/showEstacionamiento.html',
+            controller: 'showEstacionamientoCtrl'
+          })
 
         .otherwise({
             redirectTo: '/home'

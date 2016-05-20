@@ -1,0 +1,55 @@
+<br></br>
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h3 class="panel-title" align="center"> Estacionamiento</h3>
+  </div>
+  <table class="table">
+    <thead class="btn-primary">
+          <tr>
+            <th class="text-center">Id</th>
+            <th class="text-center">nombre</th>
+            <th class="text-center">capacidad</th>
+            <th class="text-center">ocupados</th>
+            
+          </tr>
+        </thead>
+        <tbody class = "btn-default">
+          <tr>
+            <th  class="text-center" scope="row">{{estacionamiento.idestacionamiento}}</th>
+            <td class="text-center">{{estacionamiento.nombreEstacionamiento}}</td>
+            <td class="text-center">{{estacionamiento.capacidad}}</td>
+            <td class="text-center">{{estacionamiento.ocupados}} </td>
+          </tr>
+          
+        </tbody>
+  </table>
+</div>
+
+<div>
+  <form name="form" ng-submit="actualizarDisponibles()" role="form">
+
+    <div flex-container="row">
+      <div flex-item>
+      <br /><label form="ocupados">Ocupados</label><br />
+      <!-- no funciona :c
+      <select ng-model="form.estacionamientosId" convert-to-number required>
+          <option ng-repeat="esta in estacionamientos" value="{{esta.idestacionamiento}}">
+            {{esta.nombreEstacionamiento}}
+          </option>
+      </select> -->
+      <input type="text" ng-model="form.ocupados" >
+        </label><br/>
+      </div>  
+    </div>
+
+    </br>
+    </br>
+    <div >
+      <button ng-click="actualizarDisponibles()" type="submit"  class="btn btn-primary btn--l btn--raised">
+      Guardar
+      </button>
+    </div>
+    
+    </div>
+  </form>
+</div>

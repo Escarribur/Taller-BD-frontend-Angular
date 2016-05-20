@@ -1,8 +1,8 @@
 angular.module('angularSpa')
-    .controller('UsuariosCtrl', function($scope, usuariosService){
+    .controller('UsuariosCtrl', function($scope, usuariosSrv){
         $scope.usuarios =[];
         function getUsuarios(){
-            usuariosService.getUsuarios()
+            usuariosSrv.getUsuarios()
             .success(function(data){
                 $scope.usuarios = data;
             })

@@ -8,7 +8,8 @@
                     $scope.form.direccion,
                     $scope.form.sexo,
                     $scope.form.telefono,
-                    $scope.form.fechanacimiento)
+                    $scope.form.fechanacimiento,
+                    $scope.form.estacionamiento_idestacionamiento)
             .success(function(data){
                 $scope.usuarios = data;
                 console.log(data);
@@ -26,6 +27,7 @@
                 $scope.form.sexo="";
                 $scope.form.telefono="";
                 $scope.form.fechanacimiento="";
+                $scope.form.estacionamiento_idestacionamiento="";
         }
     });
     
