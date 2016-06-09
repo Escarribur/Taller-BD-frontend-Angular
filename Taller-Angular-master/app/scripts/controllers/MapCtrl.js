@@ -11,7 +11,7 @@
             estacionamientosService.getEstacionamientos()
             .success(function(data){
                 $scope.estacionamientos = data;
-                for (i = 0; i < $scope.estacionamientos.length; i++){
+                for (i = 1; i < $scope.estacionamientos.length; i++){
                     createMarker($scope.estacionamientos[i]);
                 }
             })
@@ -23,6 +23,8 @@
 
         
 /*  configuracion mapa*/
+
+
     var mapOptions = {
             zoom: 16,
             center: new google.maps.LatLng(-33.450178, -70.686327),
@@ -32,6 +34,8 @@
     $scope.markers = [];
     $scope.map = new google.maps.Map(document.getElementById('map'), mapOptions);
     var infoWindow = new google.maps.InfoWindow();
+
+
 
     var createMarker = function (info){
 
@@ -53,10 +57,10 @@
 
         }
 
-
-
-
+        
 });
+
+
 
 
 })();

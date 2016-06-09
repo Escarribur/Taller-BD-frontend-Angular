@@ -13,6 +13,10 @@
             templateUrl: 'views/main.html',
             controller: 'MainCtrl'
           })
+        .when('/ruta', {
+            templateUrl: 'views/ruta.html',
+            controller: 'RutaCtrl'
+          })
         .when('/about', {
             templateUrl: 'views/about.html',
             controller: 'AboutCtrl'

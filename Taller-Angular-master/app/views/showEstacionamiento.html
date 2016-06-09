@@ -6,16 +6,13 @@
   <table class="table">
     <thead class="btn-primary">
           <tr>
-            <th class="text-center">Id</th>
-            <th class="text-center">nombre</th>
-            <th class="text-center">capacidad</th>
-            <th class="text-center">ocupados</th>
-            
+            <th class="text-center">Nombre de Estacionamiento</th>
+            <th class="text-center">Capacidad</th>
+            <th class="text-center">Ocupados</th>  
           </tr>
         </thead>
         <tbody class = "btn-default">
           <tr>
-            <th  class="text-center" scope="row">{{estacionamiento.idestacionamiento}}</th>
             <td class="text-center">{{estacionamiento.nombreEstacionamiento}}</td>
             <td class="text-center">{{estacionamiento.capacidad}}</td>
             <td class="text-center">{{estacionamiento.ocupados}} </td>
@@ -27,29 +24,14 @@
 
 <div>
   <form name="form" ng-submit="actualizarDisponibles()" role="form">
-
-    <div flex-container="row">
-      <div flex-item>
-      <br /><label form="ocupados">Ocupados</label><br />
-      <!-- no funciona :c
-      <select ng-model="form.estacionamientosId" convert-to-number required>
-          <option ng-repeat="esta in estacionamientos" value="{{esta.idestacionamiento}}">
-            {{esta.nombreEstacionamiento}}
-          </option>
-      </select> -->
-      <input type="text" ng-model="form.ocupados" >
-        </label><br/>
-      </div>  
+    <button ng-click="estacionar()" type="submit"  class="btn btn-success btn-block btn--l btn--raised">Estacionar</button>
     </div>
 
-    </br>
-    </br>
-    <div >
-      <button ng-click="actualizarDisponibles()" type="submit"  class="btn btn-primary btn--l btn--raised">
-      Guardar
-      </button>
+  </form>
+
+    <form name="form" ng-submit="actualizarDisponibles()" role="form">
+    <button ng-click="desocupar()" type="submit"  class="btn btn-danger btn-block btn--l btn--raised">Desocupar</button>
     </div>
-    
-    </div>
+
   </form>
 </div>

@@ -1,8 +1,8 @@
 angular.module('angularSpa')
-    .controller('EstacionamientosCtrl', function($scope, estacionamientosService){
+    .controller('EstacionamientosCtrl', function($scope, estacionamientosSrv){
         $scope.estacionamientos =[];
         function getEstacionamientos(){
-            estacionamientosService.getEstacionamientos()
+            estacionamientosSrv.getEstacionamientos()
             .success(function(data){
                 $scope.estacionamientos = data;
             })

@@ -13,6 +13,7 @@
             .success(function(data){
                 $scope.usuarios = data;
                 console.log(data);
+                location.assign("http://localhost:9000/#/home");
             })
             .error(function(error){
                 $scope.usuarios = 'Error al consultar por usuarios';

@@ -1,7 +1,46 @@
-<div ng-app="mapsApp" ng-controller="MapCtrl" >
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+
+<!-- Optional theme -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
+
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+
+<div class="col-xs-9" ng-app="mapsApp" ng-controller="MapCtrl" >
+	<h3 align="center">Mapa con los estacionamientos del campus universitario</h3> 
     <div id="map"></div>
-    <div id="class" ng-repeat="marker in markers | orderBy : 'title'">
-      <a href="#/estacionamientos/{{marker.id}}" ng-click="openInfoWindow($event, marker)">{{marker.title}}</a>
-    </div>
+    
   </div>
+ <div class="col-xs-3"><br>
+ <h4>Seleccionar para estacionar</h4>
+ <br>
+ 	<div id="class" ng-repeat="marker in markers | orderBy : 'title'">
+      <a href="#/estacionamientos/{{marker.id}}" ng-click="openInfoWindow($event, marker)">{{marker.title}}</a>
+    </div> 	
+
+
+
+<div ng-controller="MapCtrl">
+  <form name="form" class="css-form" novalidate>
+    Desde:
+    <input type="text" ng-model="mapa.origen" name="uOrigin" required="" />
+    <br />
+    <div ng-show="form.$submitted || form.uOrigin.$touched">
+      <div ng-show="form.uOrigin.$error.required">Ingrese origen.</div>
+    </div>
+
+    Hasta:
+    <select name="destino" id="destino" ng-model="mapa.destino">
+      <option ng-repeat="option in markers" value="{{option.position}}">{{option.title}}</option>
+    </select>
+    
+    <input type="submit" ng-click="update(mapa)" value="Mostar" />
+  </form>
+  <pre>user = {{user | json}}</pre>
+  <pre>master = {{master | json}}</pre>
+</div>
+
+
+ </div>
 
