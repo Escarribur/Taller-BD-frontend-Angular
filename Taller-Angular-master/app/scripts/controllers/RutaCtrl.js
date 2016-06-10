@@ -1,7 +1,23 @@
 (function(){
     angular.module('angularSpa')
 
-.controller('RutaCtrl', function($scope){
+.controller('RutaCtrl', function($scope, entradasService){
+
+	//obtener entradas
+	
+	$scope.entradas =[];
+    
+        function getEntradas(){
+            entradasService.getEntradas()
+            .success(function(data){
+                $scope.entradas = data;
+            })
+            .error(function(error){
+                $scope.status = 'Error al consultar por entradas';
+            });
+        }
+        getEntradas();
+        
 
 	//API Google
     function initMap() {
@@ -22,8 +38,7 @@
 
       function calculateAndDisplayRoute(directionsService, directionsDisplay) {
         var start = document.getElementById('start').value
-        var latlngStr = start.split(',', 2);
-        var latlng1 = {lat: parseFloat(latlngStr[0]), lng: parseFloat(latlngStr[1])};
+       
 
         var fin = document.getElementById('end').value
         var latlngStr = fin.split(',', 2);
@@ -31,7 +46,7 @@
 
         directionsService.route({
 
-          origin: latlng1,
+          origin: start,
           destination: latlng2,
           travelMode: google.maps.TravelMode.DRIVING
         }, function(response, status) {
