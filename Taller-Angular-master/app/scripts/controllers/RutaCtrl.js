@@ -48,7 +48,7 @@
 
           origin: start,
           destination: latlng2,
-          travelMode: google.maps.TravelMode.DRIVING
+          travelMode: google.maps.TravelMode.WALKING
         }, function(response, status) {
           if (status === google.maps.DirectionsStatus.OK) {
             directionsDisplay.setDirections(response);

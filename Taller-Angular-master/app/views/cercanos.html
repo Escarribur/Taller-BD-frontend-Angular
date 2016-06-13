@@ -1,0 +1,34 @@
+
+<br></br>
+<div>
+	<div class="pull-left">
+		<div class="panel panel-default" align="center">
+		  <div class="panel-heading">
+		    <h3 class="panel-title"> Usuario Cercanos</h3>
+		  </div>
+		  <table class="table">
+		    <thead class="btn-primary">
+		          <tr>
+		            <th class="text-center">Nombre</th>
+		            <th class="text-center">Apellido</th>
+		            <th class="text-center">Email</th>
+		            <th class="text-center">Nickname</th>
+		            
+		          </tr>
+		        </thead>
+		        <tbody class = "btn-default">
+		          <tr ng-repeat="a in cercanos">
+		            <td class="text-center">{{a.nombre}}</td>
+		            <td class="text-center">{{a.apellido}}</td>
+		            <td class="text-center">{{a.email}} </td>
+		            <td class="text-center">{{a.nickname}} </td>
+		            
+		          </tr>
+		          
+		        </tbody>
+		  </table>
+		</div>
+	</div>
+
+	
+</div>

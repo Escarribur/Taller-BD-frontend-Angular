@@ -4,4 +4,10 @@ angular.module('angularSpa')
         this.getUsuarios = function(){
             return $http.get(urlBase);
         };
+
+        this.getCercanos = function(id){
+
+        	return $http.get(urlBase+'/'+id+'/cercanos');
+        };
+
     });

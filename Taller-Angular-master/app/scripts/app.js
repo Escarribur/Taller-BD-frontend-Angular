@@ -17,6 +17,10 @@
             templateUrl: 'views/ruta.html',
             controller: 'RutaCtrl'
           })
+        .when('/cercanos', {
+            templateUrl: 'views/cercanos.html',
+            controller: 'CercanosCtrl'
+          })
         .when('/about', {
             templateUrl: 'views/about.html',
             controller: 'AboutCtrl'
