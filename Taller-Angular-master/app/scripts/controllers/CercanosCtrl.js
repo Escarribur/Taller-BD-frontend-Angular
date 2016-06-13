@@ -1,9 +1,10 @@
 angular.module('angularSpa')
-    .controller('CercanosCtrl', function($scope, usuariosSrv){
+    .controller('CercanosCtrl', function($scope,$cookies, usuariosSrv){
 		
 		$scope.cercanos = [];
+        //alert($cookies.get('sesion'));
         function getCercanos(){
-            usuariosSrv.getCercanos(1)  // cambiar 1 por id usuario logueado
+            usuariosSrv.getCercanos($cookies.get('sesion'))  // cambiar 1 por id usuario logueado
             .success(function(data){
                 $scope.cercanos = data;
             })

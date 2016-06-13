@@ -1,18 +1,17 @@
 (function(){
 
-    angular.module('angularSpa', [
-    'ngRoute'
-    ])
-
-
-
-
+    angular.module('angularSpa', ['ngRoute','ngCookies','ngResource'])
     .config(function($routeProvider){
         $routeProvider
         .when('/home', {
             templateUrl: 'views/main.html',
             controller: 'MainCtrl'
           })
+        .when('/editarPerfil', {
+            templateUrl: 'views/editarPerfil.html',
+            controller: 'editarPerfilCtrl'
+          })
+        
         .when('/ruta', {
             templateUrl: 'views/ruta.html',
             controller: 'RutaCtrl'
@@ -53,6 +52,12 @@
         .when('/estacionamientos/:idestacionamiento', {
             templateUrl: 'views/showEstacionamiento.html',
             controller: 'showEstacionamientoCtrl'
+          })
+
+
+        .when('/login', {
+            templateUrl: 'views/login.html',
+            controller: 'loginCtrl'
           })
 
         .otherwise({

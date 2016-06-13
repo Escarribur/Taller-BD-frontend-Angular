@@ -19,16 +19,21 @@
   <!-- endbuild -->
 </head>
 <body ng-app="angularSpa">
-<nav class="navbar navbar-inverse" >
+<nav class="navbar navbar-inverse" ng-controller="testCtrl" >
   <div class="container-fluid">
   <ul class="nav navbar-nav navbar-right">
+
     <li><a href="#/home"><span class="glyphicon glyphicon-home"></span>Inicio</a></li>
     
     <li><a href="#/mapa"><span class="glyphicon glyphicon-flag"></span>Estacionamientos</a></li>
-    <li><a href="#/ruta"><span class="glyphicon glyphicon-flag"></span>Rutas</a></li>
-    <li><a href="#/cercanos"><span class="glyphicon glyphicon-flag"></span>Cercanos</a></li>
-    <!--<li><a href="#/usuarios"><span class="glyphicon glyphicon-list-alt"></span>Lista de Usuarios</a></li>-->
-    <li><a href="#/crearusuarios"><span class="glyphicon glyphicon-user"></span>Registrarse</a></li>
+    <li><a href="#/ruta"><span class="glyphicon glyphicon-road"></span>Rutas</a></li>
+    
+    <li ng-if="idUser != undefined"><a href="#/cercanos"><span class="glyphicon glyphicon-map-marker"></span>Cercanos</a></li>
+    <!--<li><a href="#/usuarios"><span class="glyphicon glyphicon-list-alt"></span>Lista de Usuarios</a></li>!-->
+    <li ng-if="idUser != undefined"><a href="#/editarPerfil"><span class="glyphicon glyphicon-edit"></span>Editar Perfil</a></li>
+    <li ng-if="idUser == undefined" ><a href="#/crearusuarios"><span class="glyphicon glyphicon-user"></span>Registrarse</a></li>
+    <li ng-if="idUser == undefined" ><a href="#/login"><span class="glyphicon glyphicon-log-in"></span>Login</a></li>
+    <li ng-if="idUser != undefined"><a  href="" ng-click="logout()"><span class="glyphicon glyphicon-log-out"></span>Logout</a></li>
   </ul>
   </div>
 </nav>
@@ -70,16 +75,23 @@
   <script src="scripts/controllers/RutaCtrl.js"></script>
   <script src="scripts/controllers/UsuariosCtrl.js"></script>
   <script src="scripts/controllers/aboutCtrl.js"></script>
+  <script src="scripts/controllers/angular-cookies.min.js.js"></script>
+  <script src="scripts/controllers/angular-resource.min.js"></script>
   <script src="scripts/controllers/crearActorSrv.js"></script>
   <script src="scripts/controllers/crearUsuarioCtrl.js"></script>
   <script src="scripts/controllers/crearUsuarioSrv.js"></script>
+  <script src="scripts/controllers/editarPerfilCtrl.js"></script>
   <script src="scripts/controllers/entradasService.js"></script>
   <script src="scripts/controllers/estacionamientosCtrl.js"></script>
   <script src="scripts/controllers/estacionamientosService.js"></script>
+  <script src="scripts/controllers/loginCtrl.js"></script>
+  <script src="scripts/controllers/loginSrv.js"></script>
+  <script src="scripts/controllers/logoutCtrl.js"></script>
   <script src="scripts/controllers/showActorCtrl.js"></script>
   <script src="scripts/controllers/showActorSrv.js"></script>
   <script src="scripts/controllers/showEstacionamientoCtrl.js"></script>
   <script src="scripts/controllers/showEstacionamientoSrv.js"></script>
+  <script src="scripts/controllers/testCrtl.js"></script>
   <script src="scripts/controllers/usuariosSrv.js"></script>
   <!-- endinject -->
   <!-- endbuild -->
