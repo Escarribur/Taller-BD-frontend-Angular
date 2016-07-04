@@ -16,20 +16,18 @@
 
         $scope.editarUsuario = function (){
             usuariosSrv.editarUsuario($scope.usuario.idusuario,
-                    $scope.form.nombre, 
-                    $scope.form.apellido,
-                    $scope.form.email,
-                    $scope.form.nickname,
+                    $scope.usuario.nombre, 
+                    $scope.usuario.apellido,
+                    $scope.usuario.email,
+                    $scope.usuario.nickname,
                     $scope.form.password,
                     $scope.form.direccion,
-                    $scope.form.sexo,
+                    $scope.usuario.sexo,
                     $scope.form.telefono,
-                    $scope.form.fechanacimiento,
-                    $scope.form.estacionamiento_idestacionamiento,
+                    $scope.usuario.fechaNacimiento,
+                    $scope.usuario.estacionamiento_idestacionamiento,
                     $scope.usuario.ubi_xUsuario,
-                    $scope.usuario.ubi_yUsuario
-                    
-                    )
+                    $scope.usuario.ubi_yUsuario)
             .success(function(data){
                 $scope.resulta = data;
                 console.log(data);
@@ -40,15 +38,16 @@
             });
                 $scope.form.nombre="";
                 $scope.form.apellido="";
-
                 $scope.form.email="";
                 $scope.form.nickname="";
                 $scope.form.password="";
                 $scope.form.direccion="";
                 $scope.form.sexo="";
                 $scope.form.telefono="";
-                $scope.form.fechanacimiento="";
+                $scope.form.fechaNacimiento="";
                 $scope.form.estacionamiento_idestacionamiento="";
+                $scope.usuario.ubi_xUsuario="";
+                $scope.usuario.ubi_yUsuario="";
         }
     });
     

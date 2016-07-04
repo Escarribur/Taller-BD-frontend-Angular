@@ -60,6 +60,15 @@
             controller: 'loginCtrl'
           })
 
+        .when('/recomendarRuta', {
+            templateUrl: 'views/recomendarRuta.html',
+            controller: 'recomendarRutaCtrl'
+          })
+
+        .when('/calificarRuta', {
+            templateUrl: 'views/calificarRuta.html',
+            controller: 'calificarRutaCtrl'
+          })
         .otherwise({
             redirectTo: '/home'
           });

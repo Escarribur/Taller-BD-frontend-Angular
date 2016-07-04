@@ -10,23 +10,23 @@ angular.module('angularSpa')
         	return $http.get(urlBase+'/'+id+'/cercanos');
         };
 
-        this.editarUsuario = function(id,nombre1,apellido1,email1,nickname1,password1,direccion1,sexo1,telefono1,fechanacimiento1,idestacionamiento, ubix, ubiy){
+        this.editarUsuario = function(idusuario,nombre1,apellido1,email1,nickname1,password1,direccion1,sexo1,telefono1,fechaNacimiento1,idestacionamiento, x, y){
             var request = $http({
             method: "PUT",
-            url: "http://localhost:8080/sakila-backend-master/usuarios/"+id,
+            url: "http://localhost:8080/sakila-backend-master/usuarios/"+idusuario,
             data: {
+                        nombre: nombre1,                     
                         apellido: apellido1,
-                        direccion: direccion1,
                         email: email1,
-                        fechaNacimiento: fechanacimiento1, 
                         nickname:nickname1,
-                        nombre: nombre1,
                         password: password1,
+                        direccion: direccion1,
                         sexo: sexo1,
                         telefono: telefono1,
+                        fechaNacimiento: fechaNacimiento1, 
                         estacionamiento_idestacionamiento: idestacionamiento,
-                        ubi_xUsuario: ubix,
-                        ubi_yUsuario: ubiy,
+                        ubi_xUsuario: x,
+                        ubi_yUsuario: y,
                     },
 
             headers: {'Content-Type': 'application/json'}

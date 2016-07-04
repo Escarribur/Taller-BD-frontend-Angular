@@ -1,7 +1,6 @@
 (function(){
     angular.module('angularSpa')
     .controller('crearUsuarioCtrl', function($scope,$cookieStore, $http,crearUsuarioSrv){
-        alert($cookieStore.get('sesion').usuarioId);   
         $scope.crearUsuario = function (){
             crearUsuarioSrv.crearUsuario($scope.form.nombre, $scope.form.apellido,$scope.form.email,
                     $scope.form.nickname,
