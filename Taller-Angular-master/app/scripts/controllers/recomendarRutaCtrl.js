@@ -1,22 +1,24 @@
 (function(){
     angular.module('angularSpa')
 
-.controller('recomendarRutaCtrl', function($scope, RutasSrv,usuariosSrv){
+.controller('recomendarRutaCtrl', function($scope,$cookies , RutasSrv,usuariosSrv){
 
-	//obtener entradas
-	
-	$scope.rutas =[];
+	//obtener rutas
+	 
+	$scope.rutasUser =[];
     
-        function getRutas(){
-            RutasSrv.getRutas()
+        function getRutasUser(){
+            RutasSrv.getRutasUser($cookies.get('sesion'))
             .success(function(data){
-                $scope.rutas = data;
+                $scope.rutasUser = data;
             })
             .error(function(error){
-                $scope.status = 'Error al consultar por entradas';
+                alert('Error al consultar por rutas');
             });
         }
-        getRutas();
+        getRutasUser();
+
+        
 
   $scope.usuarios =[];
         function getUsuarios(){
@@ -29,5 +31,21 @@
             });
         }
         getUsuarios();
+
+        $scope.recomendar = function(){
+            var e = document.getElementById("end");
+            var rutaElegida= e.options[e.selectedIndex].value;
+            var a = document.getElementById("user");
+            var userElegido= a.options[a.selectedIndex].value;
+            
+            RutasSrv.postRutaUser(rutaElegida, userElegido, 0)
+            .success(function(data){
+                alert("funciona")
+            })
+            .error(function(error){
+                alert('Error post');
+            });
+
+        }
 	});
 })();
