@@ -37,7 +37,10 @@
         
 
         $scope.editarCalificacion = function (){
-            $scope.form.calificacion = ($scope.form.calificacion +  $scope.ruta.calificacion)/2 ;
+            if($scope.ruta.calificacion==0){
+                $scope.ruta.calificacion = $scope.form.calificacion;
+            }else
+                $scope.form.calificacion = (parseFloat($scope.ruta.calificacion)+parseFloat($scope.form.calificacion) )/2;
             RutasSrv.editarCalificacion(
                 $scope.ruta.idRuta,
                 $scope.ruta.nombreRuta,

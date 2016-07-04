@@ -9,17 +9,21 @@
             <option ng-repeat="ruta in rutas" value="{{ruta.idRuta}}">{{ruta.nombreRuta}}</option>
         </select>
     </div>
-    <br /><br><label for="calificacion">calificacion:  </label>{{ruta.calificacion}}<br />
+
+    <br /> <span class="glyphicon glyphicon-star" aria-hidden="true"></span> <br>
+    
+    <label for="calificacion">calificacion:  </label>{{ruta.calificacion}}<br />
     <br /><label for="calificacion">Calificacion</label><br />
-        <select ng-model="form.calificacion" convert-to-number required>
+
+        <select ng-model="form.calificacion" required>
             <option value="">-- Elige una nota --</option>
-            <option value="1">1</option>
-            <option value="2">2</option>
-            <option value="3">3</option>
-            <option value="4">4</option>
-            <option value="5">5</option>
-            <option value="6">6</option>
-            <option value="7">7</option>
+            <option value=1>1</option>
+            <option value=2>2</option>
+            <option value=3>3</option>
+            <option value=4>4</option>
+            <option value=5>5</option>
+            <option value=6>6</option>
+            <option value=7>7</option>
         </select>
 
     <div >
