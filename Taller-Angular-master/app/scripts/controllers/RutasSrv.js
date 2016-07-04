@@ -15,24 +15,22 @@ angular.module('angularSpa')
             return $http.get(urlBase2+1);
         };
 
-        this.postRutaUser = function (idruta, iduser, pertenencia){
+        this.postRutaUser = function (idruta, iduser, pertenencia,nombreRuta1,calificacion1, x1, y1, x2, y2,nombre1,apellido1,email1,nickname1,password1,direccion1,sexo1,telefono1,fechaNacimiento1,idestacionamiento, x, y){
             var request = $http({
                 method:"POST",
                 url: "http://localhost:8080/sakila-backend-master/rutasusuarios",
                 data: {
                     pertenencia: pertenencia,
-                    idRuta: idruta,
-                    idUsuario: iduser,
-                    /* ruta: {
-                        idRuta: idruta1
+                    ruta: {idRuta: idruta1,
                         nombreRuta: nombreRuta1,                     
                         calificacion: calificacion1,
                         inicio_ubi_x: x1,
                         inicio_ubi_y: y1,
                         fin_ubi_x: x2,
-                        fin_ubi_y: y2,
-                    },
+                        fin_ubi_y: y2,},
+
                     usuario: {
+                        idusuario: iduser,
                         nombre: nombre1,                     
                         apellido: apellido1,
                         email: email1,
@@ -45,7 +43,8 @@ angular.module('angularSpa')
                         estacionamiento_idestacionamiento: idestacionamiento,
                         ubi_xUsuario: x,
                         ubi_yUsuario: y,
-                    },*/
+                    },
+                     
                 },
                 headers: {'Content-Type': 'application/json'}
             });
