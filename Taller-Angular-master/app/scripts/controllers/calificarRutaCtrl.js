@@ -37,6 +37,7 @@
         
 
         $scope.editarCalificacion = function (){
+            $scope.form.calificacion = ($scope.form.calificacion +  $scope.ruta.calificacion)/2 ;
             RutasSrv.editarCalificacion(
                 $scope.ruta.idRuta,
                 $scope.ruta.nombreRuta,
@@ -44,8 +45,7 @@
                 $scope.ruta.inicio_ubi_x,
                 $scope.ruta.inicio_ubi_y,
                 $scope.ruta.fin_ubi_x,
-                $scope.ruta.fin_ubi_y,
-                $scope.ruta.pertenencia)
+                $scope.ruta.fin_ubi_y)
             .success(function(data){
                 $scope.resultado = data;
                 console.log(data);
@@ -60,7 +60,6 @@
                 $scope.form.inicio_ubi_y="";
                 $scope.form.fin_ubi_x="";
                 $scope.form.fin_ubi_y="";
-                $scope.form.pertenencia="";
         }
 
 	});

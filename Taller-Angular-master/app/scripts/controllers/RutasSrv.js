@@ -11,7 +11,7 @@ angular.module('angularSpa')
         };
 
 
-        this.editarCalificacion = function(idruta,nombreRuta1,calificacion1, x1, y1, x2, y2,pertenencia1){
+        this.editarCalificacion = function(idruta,nombreRuta1,calificacion1, x1, y1, x2, y2){
             var request = $http({
             method: "PUT",
             url: "http://localhost:8080/sakila-backend-master/rutas/"+idruta,
@@ -22,7 +22,7 @@ angular.module('angularSpa')
                         inicio_ubi_y: y1,
                         fin_ubi_x: x2,
                         fin_ubi_y: y2,
-                        pertenencia: pertenencia1,
+                        
                     },
 
             headers: {'Content-Type': 'application/json'}
